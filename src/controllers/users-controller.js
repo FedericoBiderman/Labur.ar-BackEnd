@@ -14,7 +14,7 @@ router.post('/login', async (req, res) => {
 
 
     try {
-        const user = await svc.getAllAsync(username, password);
+        const user = await svc.getByUsernamePasswordAsync(username, password);
         console.log('User retrieved from DB:', user);
 
 
@@ -67,8 +67,8 @@ router.post('/register', async (req, res) => {
 
     try {
         //const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = await svc.createUser({ first_name, last_name, username, password});
-        console.log('Nuevo usuario creado:', newUser);
+        const rowsAffected = await svc.createUser({ first_name, last_name, username, password});
+        console.log('Nuevo usuario creado (rowsAffected):', rowsAffected);
         res.status(201).json({ message: 'Usuario registrado exitosamente.' });
     } catch (error) {
         console.error('Error durante registracion:', error);

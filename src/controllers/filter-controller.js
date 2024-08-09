@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import JobOffersService from './../services/job_offers-service.js';
+//import JobOffersService from './../services/job_offers-service.js';
+import JobOffersService from './../services/filter-services.js'
 
 const router = Router();
 const jobOffersService = new JobOffersService();

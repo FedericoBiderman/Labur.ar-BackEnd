@@ -1,9 +1,10 @@
-import JobOffersRepository from '../repositories/job_offers-repository.js';
+//import JobOffersRepository from '../repositories/job_offers-repository.js';
+//import JobOffersRepository from './../repositories/
 import UsersRepository from '../repositories/users-repository.js';
 
 export default class JobOffersService {
     constructor() {
-        this.jobOffersRepo = new JobOffersRepository();
+        //this.jobOffersRepo = new JobOffersRepository();
         this.usersRepo = new UsersRepository();
     }
 

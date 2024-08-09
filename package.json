@@ -4,8 +4,9 @@
   "description": "TP1",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    ,"ej01": "node src/ej01.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ej01": "node src/ej01.js",
+    "start": "nodemon index.js"
   },
   "author": "Fede y Beni",
   "license": "ISC",
