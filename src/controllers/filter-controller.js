@@ -1,16 +1,18 @@
-import { Router } from 'express';
-//import JobOffersService from './../services/job_offers-service.js';
-import JobOffersService from './../services/filter-services.js'
+import {Router} from 'express';
+//import UserService from './../services/filter-services.js';
+import UserService from './../services/filter-services.js';
 
 const router = Router();
-const jobOffersService = new JobOffersService();
+const Matches = new FilterService();
 
-router.get('/job-offers', async (req, res) => {
+
+//Matches Endpoint
+router.get('/matches', async (req, res) => {
     const filters = req.query;
     const userId = req.query.userId;
 
     try {
-        const filteredJobOffers = await jobOffersService.getFilteredJobOffers(filters, userId);
+        const filteredJobOffers = await Matches.getFilteredJobOffers(filters, userId);
 
         res.status(200).json({
             success: true,

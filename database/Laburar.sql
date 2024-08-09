@@ -25,7 +25,6 @@ SET row_security = off;
 
 CREATE SCHEMA public;
 
-
 ALTER SCHEMA public OWNER TO pg_database_owner;
 
 --
@@ -471,7 +470,7 @@ ALTER SEQUENCE public."JobOffer_User_seq" OWNED BY public."Corporations"."User";
 --
 
 CREATE TABLE public."Matches_Types" (
-    "Id" smallint
+    "Id" int
 );
 
 
@@ -483,15 +482,15 @@ ALTER TABLE public."Matches_Types" OWNER TO postgres;
 --
 
 CREATE TABLE public."Picker_Job" (
-    "Id_User" smallint,
+    "Id_User" int,
     "Title" text,
     "Description" text,
     "Category" integer,
     "Sub_Category" integer,
     "Date_Created" date,
-    "AgeMax" smallint,
-    "AgeMin" smallint,
-    "Salary" smallint,
+    "AgeMax" int,
+    "AgeMin" int,
+    "Salary" int,
     "IdCorporation" integer,
     "Id" integer NOT NULL
 );
@@ -530,10 +529,10 @@ ALTER SEQUENCE public."Picker_Job_Id_seq" OWNED BY public."Picker_Job"."Id";
 --
 
 CREATE TABLE public."Pickers_Matches" (
-    "Id" smallint,
-    "Id_Job" smallint,
-    "Id_User" smallint,
-    "Match_Type" smallint
+    "Id" int,
+    "Id_Job" int,
+    "Id_User" int,
+    "Match_Type" int
 );
 
 
@@ -630,7 +629,7 @@ CREATE TABLE public."Users" (
     "Document_Type" integer,
     "Surname" text,
     "Birthdate" date,
-    "Gender" smallint,
+    "Gender" int,
     "Document_Number" bigint,
     "Email" character varying(320),
     "Password" character varying(20),
@@ -855,16 +854,16 @@ INSERT INTO public."Categories" VALUES (38, 'Neuropsychology', NULL);
 INSERT INTO public."Categories" VALUES (39, 'Sports Psychology', NULL);
 INSERT INTO public."Categories" VALUES (40, 'Vocational Guidance', NULL);
 INSERT INTO public."Categories" VALUES (41, 'Medical', NULL);
-INSERT INTO public."Categories" VALUES (42, 'Cardiologist', NULL);
-INSERT INTO public."Categories" VALUES (43, 'Dermatologist', NULL);
-INSERT INTO public."Categories" VALUES (44, 'Endocrinologist', NULL);
-INSERT INTO public."Categories" VALUES (45, 'Gastroenterologist', NULL);
-INSERT INTO public."Categories" VALUES (46, 'Neurologist', NULL);
-INSERT INTO public."Categories" VALUES (47, 'Orthopedic Surgeon', NULL);
-INSERT INTO public."Categories" VALUES (48, 'Pediatrician', NULL);
-INSERT INTO public."Categories" VALUES (49, 'Psychiatrist', NULL);
-INSERT INTO public."Categories" VALUES (50, 'Radiologist', NULL);
-INSERT INTO public."Categories" VALUES (51, 'Urologist', NULL);
+INSERT INTO public."Categories" VALUES (42, 'Cardiologist', 41);
+INSERT INTO public."Categories" VALUES (43, 'Dermatologist', 41);
+INSERT INTO public."Categories" VALUES (44, 'Endocrinologist', 41);
+INSERT INTO public."Categories" VALUES (45, 'Gastroenterologist', 41);
+INSERT INTO public."Categories" VALUES (46, 'Neurologist', 41);
+INSERT INTO public."Categories" VALUES (47, 'Orthopedic Surgeon', 41);
+INSERT INTO public."Categories" VALUES (48, 'Pediatrician', 41);
+INSERT INTO public."Categories" VALUES (49, 'Psychiatrist', 41);
+INSERT INTO public."Categories" VALUES (50, 'Radiologist', 41);
+INSERT INTO public."Categories" VALUES (51, 'Urologist', 41);
 
 
 --
@@ -1274,16 +1273,16 @@ INSERT INTO public."Genders" VALUES (4, 'Other');
 
 INSERT INTO public."Picker_Job" VALUES (2, 'Seeking for a engineer', 'full time, paid', 9, 14, '2024-06-14', NULL, NULL, NULL, NULL, 1);
 INSERT INTO public."Picker_Job" VALUES (2, 'Seeking for a engineer', 'full time, paid', 9, 14, '2024-06-14', NULL, NULL, NULL, NULL, 2);
-INSERT INTO public."Picker_Job" VALUES (11, 'Software Engineer Position', 'Looking for a skilled software engineer to develop web applications.', 'Engineer', 'Software Engineer', '2024-06-14', 25, 20, 60000, 11);
-INSERT INTO public."Picker_Job" VALUES (12, 'Mechanical Engineer Role', 'Need a mechanical engineer to design and oversee manufacturing processes.', 'Engineer', 'Mechanical Engineer', '2024-06-14', 30, 22, 55000, 12);
-INSERT INTO public."Picker_Job" VALUES (3, 'Civil Engineer Job', 'Seeking a civil engineer for infrastructure projects.', 'Engineer', 'Civil Engineer', '2024-06-14', 35, 25, 70000, 3);
-INSERT INTO public."Picker_Job" VALUES (4, 'Digital Marketing Specialist', 'We need a digital marketing specialist to manage online campaigns.', 'Marketing', 'Digital Marketing', '2024-06-14', 40, 22, 50000, 4);
-INSERT INTO public."Picker_Job" VALUES (5, 'Human Resources Manager', 'Looking for an HR manager to handle recruitment and employee relations.', 'Human Resources', NULL, '2024-06-14', 45, 30, 75000, 5);
-INSERT INTO public."Picker_Job" VALUES (6, 'Biomedical Engineer Opportunity', 'Hiring a biomedical engineer to work on medical device development.', 'Engineer', 'Biomedical Engineer', '2024-06-14', 40, 28, 68000, 6);
-INSERT INTO public."Picker_Job" VALUES (7, 'Psychiatrist Position', 'We are looking for a psychiatrist to join our mental health team.', 'Medical', 'Psychiatrist', '2024-06-14', 50, 30, 85000, 7);
-INSERT INTO public."Picker_Job" VALUES (8, 'Operations Manager', 'Seeking an operations manager to oversee production processes.', 'Operations Management', NULL, '2024-06-14', 45, 32, 72000, 8);
-INSERT INTO public."Picker_Job" VALUES (9, 'Electrical Engineer Needed', 'Looking for an electrical engineer to work on power systems.', 'Engineer', 'Electrical Engineer', '2024-06-14', 38, 26, 64000, 9);
-INSERT INTO public."Picker_Job" VALUES (10, 'Environmental Engineer Job', 'Hiring an environmental engineer to work on sustainability projects.', 'Engineer', 'Environmental Engineer', '2024-06-14', 35, 27, 67000, 10);
+INSERT INTO public."Picker_Job" VALUES (11, 'Software Engineer Position', 'Looking for a skilled software engineer to develop web applications.',9 , 10, '2024-06-14', 25, 20, 60000, 11);
+INSERT INTO public."Picker_Job" VALUES (12, 'Mechanical Engineer Role', 'Need a mechanical engineer to design and oversee manufacturing processes.', 9, 11, '2024-06-14', 30, 22, 55000, 12);
+INSERT INTO public."Picker_Job" VALUES (3, 'Civil Engineer Job', 'Seeking a civil engineer for infrastructure projects.', 9 , 12, '2024-06-14', 35, 25, 70000, 3);
+INSERT INTO public."Picker_Job" VALUES (4, 'Digital Marketing Specialist', 'We need a digital marketing specialist to manage online campaigns.', 28, 32, '2024-06-14', 40, 22, 50000, 4);
+INSERT INTO public."Picker_Job" VALUES (5, 'Human Resources Manager', 'Looking for an HR manager to handle recruitment and employee relations.', 25, NULL, '2024-06-14', 45, 30, 75000, 5);
+INSERT INTO public."Picker_Job" VALUES (6, 'Biomedical Engineer Opportunity', 'Hiring a biomedical engineer to work on medical device development.', 9, 16, '2024-06-14', 40, 28, 68000, 6);
+INSERT INTO public."Picker_Job" VALUES (7, 'Psychiatrist Position', 'We are looking for a psychiatrist to join our mental health team.', 41, 49, '2024-06-14', 50, 30, 85000, 7);
+INSERT INTO public."Picker_Job" VALUES (8, 'Operations Manager', 'Seeking an operations manager to oversee production processes.', 26, NULL, '2024-06-14', 45, 32, 72000, 8);
+INSERT INTO public."Picker_Job" VALUES (9, 'Electrical Engineer Needed', 'Looking for an electrical engineer to work on power systems.', 9, 12, '2024-06-14', 38, 26, 64000, 9);
+INSERT INTO public."Picker_Job" VALUES (10, 'Environmental Engineer Job', 'Hiring an environmental engineer to work on sustainability projects.', 9, 17, '2024-06-14', 35, 27, 67000, 10);
 
 
 
@@ -1323,7 +1322,7 @@ INSERT INTO public."Users" VALUES ('Federico', '2024-06-14', 2, 'Bider', '2007-0
 -- Inserciones en la tabla Users
 INSERT INTO public."Users" VALUES ('Alice', '2024-06-14', 2, 'Smith', '1990-01-01', 2, 12345678, 'alice.smith@example.com', 'aliceuser', 'alicepass', 'engineering', 'Reading and traveling', 'Innovative work environment', 'Currently working as a software developer at TechCorp', 'Developed a project management tool', NULL, 11, 240);
 INSERT INTO public."Users" VALUES ('Bob', '2024-06-14', 3, 'Johnson', '1985-02-02', 3, 23456789, 'bob.johnson@example.com', 'bobuser', 'bobpass', 'marketing', 'Hiking and photography', 'Collaborative team', 'Currently working as a marketing specialist at MarketCo', 'Led a successful ad campaign', NULL, 12, 240);
-INSERT INTO public."Users" VALUES ('Carol', '2024-06-14', 4, 'Williams', '1988-03-03', 4, 34567890, 'carol.williams@example.com', 'caroluser', 'carolpass', 'finance', 'Cooking and painting', 'Supportive work culture', 'Currently working as a financial analyst at FinCorp', 'Implemented cost-saving measures', NULL, 3, );
+INSERT INTO public."Users" VALUES ('Carol', '2024-06-14', 4, 'Williams', '1988-03-03', 4, 34567890, 'carol.williams@example.com', 'caroluser', 'carolpass', 'finance', 'Cooking and painting', 'Supportive work culture', 'Currently working as a financial analyst at FinCorp', 'Implemented cost-saving measures', NULL, 3, 240 );
 INSERT INTO public."Users" VALUES ('David', '2024-06-14', 5, 'Brown', '1992-04-04', 5, 45678901, 'david.brown@example.com', 'daviduser', 'davidpass', 'human resources', 'Cycling and music', 'Diverse workplace', 'Currently working as an HR manager at HR Solutions', 'Improved employee retention rates', NULL, 4, 240);
 INSERT INTO public."Users" VALUES ('Eve', '2024-06-14', 6, 'Jones', '1995-05-05', 6, 56789012, 'eve.jones@example.com', 'eveuser', 'evepass', 'biomedical engineering', 'Swimming and gardening', 'Flexible working hours', 'Currently working as a biomedical engineer at BioTech', 'Developed a new medical device', NULL, 5, 240);
 INSERT INTO public."Users" VALUES ('Frank', '2024-06-14', 7, 'Miller', '1983-06-06', 7, 67890123, 'frank.miller@example.com', 'frankuser', 'frankpass', 'medicine', 'Running and gaming', 'Cutting-edge technology', 'Currently working as a psychiatrist at HealthCare', 'Provided mental health support', NULL, 6, 240);
