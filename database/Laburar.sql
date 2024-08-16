@@ -5,6 +5,7 @@
 -- Dumped from database version 16.2
 -- Dumped by pg_dump version 16.0
 
+
 -- Started on 2024-07-05 11:22:19
 
 SET statement_timeout = 0;
@@ -84,6 +85,7 @@ ALTER SEQUENCE public."Categories_Id_seq" OWNED BY public."Categories"."Id";
 -- Name: Corporations; Type: TABLE; Schema: public; Owner: postgres
 --
 
+
 CREATE TABLE public."Corporations" (
     "User" integer NOT NULL,
     "CorporationName" character varying(100) NOT NULL,
@@ -94,7 +96,6 @@ CREATE TABLE public."Corporations" (
     "JobOfferCategory" integer NOT NULL,
     "Id" integer NOT NULL
 );
-
 
 ALTER TABLE public."Corporations" OWNER TO postgres;
 
@@ -470,7 +471,9 @@ ALTER SEQUENCE public."JobOffer_User_seq" OWNED BY public."Corporations"."User";
 --
 
 CREATE TABLE public."Matches_Types" (
-    "Id" int
+    "Id" int,
+    "Id_UserPicker" integer,
+    "Id_UserPursuer" integer
 );
 
 
@@ -629,7 +632,7 @@ CREATE TABLE public."Users" (
     "Document_Type" integer,
     "Surname" text,
     "Birthdate" date,
-    "Gender" int,
+    "Gender" integer,
     "Document_Number" bigint,
     "Email" character varying(320),
     "Password" character varying(20),
