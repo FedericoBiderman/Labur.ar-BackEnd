@@ -9,7 +9,7 @@ export default class CategoriesRepository{
         const client = new Client(DBConfig);
         try{
             await client.connect();
-            const sql = `SELECT * FROM event_categories`;
+            const sql = `SELECT * FROM Categories`;
             const result = await client.query(sql);
             await client.end();
             returnArray = result.rows;
@@ -26,7 +26,7 @@ export default class CategoriesRepository{
         const client = new Client(DBConfig);
         try{
             await client.connect();
-            const sql = `SELECT * FROM event_categories WHERE id=$1`;
+            const sql = `SELECT * FROM Categories WHERE id=$1`;
             const values = [id];
             const result = await client.query(sql, values);
             await client.end();
@@ -47,7 +47,7 @@ export default class CategoriesRepository{
         const client = new Client(DBConfig);
         try{
             await client.connect();
-            const sql = `Insert INTO event_categories (
+            const sql = `Insert INTO Categories (
                     name            ,
                     display_order   
                 )  VALUES (
@@ -78,7 +78,7 @@ export default class CategoriesRepository{
             
             await client.connect();
 
-            const sql=`UPDATE event_categories SET
+            const sql=`UPDATE Categories SET
                 name =  $2        ,
                 display_order = $3
                 WHERE id = $1`;  
@@ -102,7 +102,7 @@ export default class CategoriesRepository{
         const client = new Client(DBConfig);
         try{
             await client.connect();
-            const sql = `DELETE FROM event_categories WHERE id=$1`;
+            const sql = `DELETE FROM Categories WHERE id=$1`;
             const values = [id];
             const result = await client.query(sql, values);
             await client.end();

@@ -1,4 +1,4 @@
-import CategoriesRepository from '../repositories/event_categories-repository.js';
+import CategoriesRepository from '../repositories/Categories-repository.js';
 
 export default class CategoriesService {
   // Clase con lógica de negocio.

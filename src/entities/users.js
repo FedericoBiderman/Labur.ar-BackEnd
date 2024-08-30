@@ -21,4 +21,3 @@ class Users {
 }
 
 export default Users;
-//a
