@@ -9,7 +9,7 @@ import Document_TypesRouter from "./src/controllers/Document_Types-controller.js
 import EducationalStatusRouter from "./src/controllers/EducationalStatus-controller.js";
 import EducationalInstitutionsRouter from "./src/controllers/EducationalInstitutions-controller.js";
 const app  = express();
-const port = 3000;
+const port = 8080;
 
 
 // Inclusión de los Middlewares

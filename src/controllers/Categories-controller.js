@@ -4,6 +4,7 @@ import CategoriesService from '../services/Categories-service.js'
 const router = Router();
 const svc    = new CategoriesService();		// Instanciación del Service.
 
+//SELECCOINAR TODAS LAS CATEGORIAS endpoint
 router.get('', async (req, res) => {
   let respuesta;
   const returnArray = await svc.getAllAsync();
@@ -16,8 +17,10 @@ router.get('', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
+  const id = req.params.id;
+  console.log('id', id);
   let respuesta;
-  let id = req.params.id;
+//  let id = req.params.id;
   const returnEntity = await svc.getByIdAsync(id);
   if (returnEntity != null){
     respuesta = res.status(StatusCodes.OK).json(returnEntity);

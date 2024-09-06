@@ -9,7 +9,8 @@ export default class CategoriesRepository{
         const client = new Client(DBConfig);
         try{
             await client.connect();
-            const sql = `SELECT * FROM Categories`;
+            const sql = `SELECT * FROM public."Categories"
+            ORDER BY "Id" ASC `;
             const result = await client.query(sql);
             await client.end();
             returnArray = result.rows;
@@ -26,7 +27,7 @@ export default class CategoriesRepository{
         const client = new Client(DBConfig);
         try{
             await client.connect();
-            const sql = `SELECT * FROM Categories WHERE id=$1`;
+            const sql = `SELECT * FROM public."Categories" WHERE public."Categories"."Id"=$1`;
             const values = [id];
             const result = await client.query(sql, values);
             await client.end();

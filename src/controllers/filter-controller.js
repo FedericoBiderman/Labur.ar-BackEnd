@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import MatchesRepository from './../repositories/matches_repository.js'; // Asegúrate de usar la ruta correcta
+import MatchesRepository from './../repositories/filter-repository.js'; // Asegúrate de usar la ruta correcta
 import { StatusCodes } from 'http-status-codes'; // Puedes instalar este paquete si aún no lo tienes
 
 const router = Router();

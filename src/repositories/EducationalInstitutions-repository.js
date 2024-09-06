@@ -9,7 +9,7 @@ export default class EducationalInstitutionsRepository{
         const client = new Client(DBConfig);
         try{
             await client.connect();
-            const sql = `SELECT * FROM EducationalInstitutions`;
+            const sql = `SELECT * FROM public."EducationalInstitutions"`;
             const result = await client.query(sql);
             await client.end();
             returnArray = result.rows;
@@ -26,7 +26,7 @@ export default class EducationalInstitutionsRepository{
         const client = new Client(DBConfig);
         try{
             await client.connect();
-            const sql = `SELECT * FROM EducationalInstitutions WHERE id=$1`;
+            const sql = `SELECT * FROM public."EducationalInstitutions" WHERE "Id"=$1`;
             const values = [id];
             const result = await client.query(sql, values);
             await client.end();

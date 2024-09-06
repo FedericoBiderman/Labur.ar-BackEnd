@@ -1,4 +1,4 @@
-import MatchesRepository from './../repositories/matches_repository.js';
+import MatchesRepository from './../repositories/filter-repository.js';
 
 export default class FilterService {
     constructor() {
