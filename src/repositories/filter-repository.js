@@ -13,46 +13,47 @@ export default class MatchesRepository {
         
         if (category) {
             values.push(`%${category}%`);
-            conditions.push(`c1.name LIKE $${values.length}`);
+            conditions.push(`"Categories".name LIKE $${values.length}`);
         }
         if (sub_category) {
             values.push(`%${sub_category}%`);
-            conditions.push(`c2.name LIKE $${values.length}`);
+            conditions.push(`"Categories".name LIKE $${values.length}`);
         }
         if (location) {
             values.push(location);
-            conditions.push(`u.country = $${values.length}`);
+            conditions.push(`"Users".country = $${values.length}`);
         }
         if (passion) {
             values.push(`%${passion}%`);
-            conditions.push(`u.passion LIKE $${values.length}`);
+            conditions.push(`"Users".passion LIKE $${values.length}`);
         }
         if (hobbies) {
             values.push(`%${hobbies}%`);
-            conditions.push(`u.hobbies LIKE $${values.length}`);
+            conditions.push(`"Users".hobbies LIKE $${values.length}`);
         }
 
         const whereClause = conditions.length ? `WHERE ${conditions.join(' AND ')}` : '';
         const query = `
-            INSERT INTO public."Matches_Types" ("Id_UserPicker", "Id_UserPursuer")
+            INSERT INTO public."Pickers_Matches" ("Id_Job", "Id_User", "Match_Type")
             SELECT
-                pj."Id_User" AS UserPickerId,
-                u."Id" AS UserPursuerId
+                "Picker_Job"."Id" AS JobId,  -- Uso completo del nombre de la tabla
+                "Users"."Id" AS UserId,
+                1 -- Tipo de match
             FROM
-                public."Picker_Job" pj
+                public."Picker_Job"
             JOIN
-                public."Categories" c1 ON pj."Category" = c1."Id"
+                public."Categories" ON "Picker_Job"."Category" = "Categories"."Id"
             LEFT JOIN
-                public."Categories" c2 ON pj."Sub_Category" = c2."Id"
+                public."Categories" AS "SubCategories" ON "Picker_Job"."Sub_Category" = "SubCategories"."Id"
             JOIN
-                public."Corporations" corp ON pj."IdCorporation" = corp."Id"
+                public."Corporations" ON "Picker_Job"."IdCorporation" = "Corporations"."Id"
             JOIN
-                public."Users" u ON u."Country" = corp."Country"
+                public."Users" ON "Users"."Country" = "Corporations"."Country"
             ${whereClause}
             AND
-            (u."Id", pj."Id_User") NOT IN (
-                SELECT "Id_UserPursuer", "Id_UserPicker"
-                FROM public."Matches_Types"
+            ("Users"."Id", "Picker_Job"."Id") NOT IN (
+                SELECT "Id_User", "Id_Job"
+                FROM public."Pickers_Matches"
             )
         `;
 
@@ -77,67 +78,41 @@ export default class MatchesRepository {
         
         if (category) {
             values.push(`%${category}%`);
-            conditions.push(`c1.name LIKE $${values.length}`);
+            conditions.push(`"Categories".name LIKE $${values.length}`);
         }
         if (sub_category) {
             values.push(`%${sub_category}%`);
-            conditions.push(`c2.name LIKE $${values.length}`);
+            conditions.push(`"SubCategories".name LIKE $${values.length}`);
         }
         if (location) {
             values.push(location);
-            conditions.push(`u.country = $${values.length}`);
+            conditions.push(`"Users".country = $${values.length}`);
         }
         if (passion) {
             values.push(`%${passion}%`);
-            conditions.push(`u.passion LIKE $${values.length}`);
+            conditions.push(`"Users".passion LIKE $${values.length}`);
         }
         if (hobbies) {
             values.push(`%${hobbies}%`);
-            conditions.push(`u.hobbies LIKE $${values.length}`);
+            conditions.push(`"Users".hobbies LIKE $${values.length}`);
         }
 
         const whereClause = conditions.length ? `WHERE ${conditions.join(' AND ')}` : '';
         const query = `
-            WITH MatchScores AS (
-                SELECT
-                    mt."Id_UserPicker",
-                    mt."Id_UserPursuer",
-                    (
-                        -- Calcula la puntuación de coincidencia
-                        CASE WHEN pj."Category" = u."Experience1"::integer OR
-                                  pj."Category" = u."Experience2"::integer OR
-                                  pj."Category" = u."Experience3"::integer
-                           THEN 1 ELSE 0 END
-                        +
-                        CASE WHEN pj."Sub_Category" = u."Experience1"::integer OR
-                                  pj."Sub_Category" = u."Experience2"::integer OR
-                                  pj."Sub_Category" = u."Experience3"::integer
-                           THEN 1 ELSE 0 END
-                        +
-                        CASE WHEN u."Country" = corp."Country" THEN 1 ELSE 0 END
-                        +
-                        CASE WHEN u."Passion" LIKE '%' || pj."Description" || '%' OR
-                                  u."Hobbies" LIKE '%' || pj."Description" || '%'
-                           THEN 1 ELSE 0 END
-                    ) AS MatchScore
-                FROM
-                    public."Matches_Types" mt
-                JOIN
-                    public."Picker_Job" pj ON mt."Id_UserPicker" = pj."Id_User"
-                JOIN
-                    public."Users" u ON mt."Id_UserPursuer" = u."Id"
-                JOIN
-                    public."Corporations" corp ON pj."IdCorporation" = corp."Id"
-                ${whereClause}
-            )
             SELECT
-                ms."Id_UserPicker",
-                ms."Id_UserPursuer",
-                ms."MatchScore"
+                "Pickers_Matches"."Id",
+                "Pickers_Matches"."Id_Job",
+                "Pickers_Matches"."Id_User",
+                "Pickers_Matches"."Match_Type"
             FROM
-                MatchScores ms
-            ORDER BY
-                ms."MatchScore" DESC
+                public."Pickers_Matches"
+            JOIN
+                public."Picker_Job" ON "Pickers_Matches"."Id_Job" = "Picker_Job"."Id"
+            JOIN
+                public."Users" ON "Pickers_Matches"."Id_User" = "Users"."Id"
+            JOIN
+                public."Corporations" ON "Picker_Job"."IdCorporation" = "Corporations"."Id"
+            ${whereClause}
             LIMIT $${values.length + 1} OFFSET $${values.length + 2}
         `;
         
@@ -149,14 +124,11 @@ export default class MatchesRepository {
             
             const countQuery = `
                 SELECT COUNT(*)
-                FROM (
-                    SELECT 1
-                    FROM public."Matches_Types" mt
-                    JOIN public."Picker_Job" pj ON mt."Id_UserPicker" = pj."Id_User"
-                    JOIN public."Users" u ON mt."Id_UserPursuer" = u."Id"
-                    JOIN public."Corporations" corp ON pj."IdCorporation" = corp."Id"
-                    ${whereClause}
-                ) AS count_query
+                FROM public."Pickers_Matches"
+                JOIN public."Picker_Job" ON "Pickers_Matches"."Id_Job" = "Picker_Job"."Id"
+                JOIN public."Users" ON "Pickers_Matches"."Id_User" = "Users"."Id"
+                JOIN public."Corporations" ON "Picker_Job"."IdCorporation" = "Corporations"."Id"
+                ${whereClause}
             `;
             const countRes = await client.query(countQuery, values.slice(0, values.length - 2));
             const total = parseInt(countRes.rows[0].count, 10);
@@ -169,5 +141,4 @@ export default class MatchesRepository {
             throw error;
         }
     }
-
 }
