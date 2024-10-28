@@ -2,8 +2,9 @@ const config = {
     host     : "localhost",
     database : "Laburar", 
     user     : "postgres",
-    password : "root",
+    password : "Bocajuniors9.",
     port     : 5432
 }
+
 
 export default config;

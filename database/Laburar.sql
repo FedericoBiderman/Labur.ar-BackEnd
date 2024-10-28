@@ -1313,6 +1313,7 @@ INSERT INTO public."Picker_Job" VALUES (10, 'Environmental Engineer Job', 'Hirin
 
 INSERT INTO public."UserStudies" VALUES (1, 1, 5, 2, 'Chemical Engineer');
 
+INSERT INTO public."UserCategories" VALUES (1, 11, 9);
 
 --
 -- TOC entry 4902 (class 0 OID 16560)
