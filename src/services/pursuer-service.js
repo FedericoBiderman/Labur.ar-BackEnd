@@ -1,13 +1,15 @@
-// services/userService.js
-const userRepository = require('../repositories/userRepository');
+import PursuerMRepository from '../repositories/pursuerM-repository.js';
 
-const findCompatibleUsers = async (categoryId) => {
-  if (!categoryId || isNaN(categoryId)) {
-    throw new Error('Invalid category ID');
+export default class UserService {
+  
+  // Método para encontrar usuarios compatibles por categoría
+  findCompatibleUsersAsync = async (categoryId) => {
+    if (!categoryId || isNaN(categoryId)) {
+      throw new Error('Invalid category ID');
+    }
+    
+    const repo = new PursuerMRepository();
+    const users = await repo.getUsersByCategoryAsync(categoryId);
+    return users;
   }
-  return await userRepository.getUsersByCategory(categoryId);
-};
-
-module.exports = {
-  findCompatibleUsers,
-};
+}
