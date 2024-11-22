@@ -5,8 +5,7 @@
 -- Dumped from database version 16.2
 -- Dumped by pg_dump version 16.0
 
-
--- Started on 2024-07-05 11:22:19
+-- Started on 2024-11-22 10:04:25
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -26,6 +25,7 @@ SET row_security = off;
 
 CREATE SCHEMA public;
 
+
 ALTER SCHEMA public OWNER TO pg_database_owner;
 
 --
@@ -42,7 +42,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 215 (class 1259 OID 16506)
+-- TOC entry 215 (class 1259 OID 16399)
 -- Name: Categories; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -56,7 +56,7 @@ CREATE TABLE public."Categories" (
 ALTER TABLE public."Categories" OWNER TO postgres;
 
 --
--- TOC entry 216 (class 1259 OID 16511)
+-- TOC entry 216 (class 1259 OID 16404)
 -- Name: Categories_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -81,10 +81,9 @@ ALTER SEQUENCE public."Categories_Id_seq" OWNED BY public."Categories"."Id";
 
 
 --
--- TOC entry 217 (class 1259 OID 16512)
+-- TOC entry 217 (class 1259 OID 16405)
 -- Name: Corporations; Type: TABLE; Schema: public; Owner: postgres
 --
-
 
 CREATE TABLE public."Corporations" (
     "User" integer NOT NULL,
@@ -97,10 +96,11 @@ CREATE TABLE public."Corporations" (
     "Id" integer NOT NULL
 );
 
+
 ALTER TABLE public."Corporations" OWNER TO postgres;
 
 --
--- TOC entry 218 (class 1259 OID 16515)
+-- TOC entry 218 (class 1259 OID 16408)
 -- Name: Corporations_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -125,7 +125,7 @@ ALTER SEQUENCE public."Corporations_Id_seq" OWNED BY public."Corporations"."Id";
 
 
 --
--- TOC entry 219 (class 1259 OID 16516)
+-- TOC entry 219 (class 1259 OID 16409)
 -- Name: Countries; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -139,7 +139,7 @@ CREATE TABLE public."Countries" (
 ALTER TABLE public."Countries" OWNER TO postgres;
 
 --
--- TOC entry 220 (class 1259 OID 16519)
+-- TOC entry 220 (class 1259 OID 16412)
 -- Name: Countries_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -164,7 +164,7 @@ ALTER SEQUENCE public."Countries_Id_seq" OWNED BY public."Countries"."Id";
 
 
 --
--- TOC entry 221 (class 1259 OID 16520)
+-- TOC entry 221 (class 1259 OID 16413)
 -- Name: Document_Types; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -177,7 +177,7 @@ CREATE TABLE public."Document_Types" (
 ALTER TABLE public."Document_Types" OWNER TO postgres;
 
 --
--- TOC entry 222 (class 1259 OID 16523)
+-- TOC entry 222 (class 1259 OID 16416)
 -- Name: Document_Types_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -202,7 +202,7 @@ ALTER SEQUENCE public."Document_Types_Id_seq" OWNED BY public."Document_Types"."
 
 
 --
--- TOC entry 223 (class 1259 OID 16524)
+-- TOC entry 223 (class 1259 OID 16417)
 -- Name: EducationalInstitutions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -215,7 +215,7 @@ CREATE TABLE public."EducationalInstitutions" (
 ALTER TABLE public."EducationalInstitutions" OWNER TO postgres;
 
 --
--- TOC entry 224 (class 1259 OID 16527)
+-- TOC entry 224 (class 1259 OID 16420)
 -- Name: EducationalInstitutions_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -240,7 +240,7 @@ ALTER SEQUENCE public."EducationalInstitutions_Id_seq" OWNED BY public."Educatio
 
 
 --
--- TOC entry 225 (class 1259 OID 16528)
+-- TOC entry 225 (class 1259 OID 16421)
 -- Name: EducationalStatus; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -253,7 +253,7 @@ CREATE TABLE public."EducationalStatus" (
 ALTER TABLE public."EducationalStatus" OWNER TO postgres;
 
 --
--- TOC entry 226 (class 1259 OID 16531)
+-- TOC entry 226 (class 1259 OID 16424)
 -- Name: EducationalStatus_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -278,7 +278,7 @@ ALTER SEQUENCE public."EducationalStatus_Id_seq" OWNED BY public."EducationalSta
 
 
 --
--- TOC entry 227 (class 1259 OID 16532)
+-- TOC entry 227 (class 1259 OID 16425)
 -- Name: Genders; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -291,7 +291,7 @@ CREATE TABLE public."Genders" (
 ALTER TABLE public."Genders" OWNER TO postgres;
 
 --
--- TOC entry 228 (class 1259 OID 16537)
+-- TOC entry 228 (class 1259 OID 16430)
 -- Name: Genders_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -316,7 +316,7 @@ ALTER SEQUENCE public."Genders_Id_seq" OWNED BY public."Genders"."Id";
 
 
 --
--- TOC entry 229 (class 1259 OID 16538)
+-- TOC entry 229 (class 1259 OID 16431)
 -- Name: JobOffer_Category_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -341,7 +341,7 @@ ALTER SEQUENCE public."JobOffer_Category_seq" OWNED BY public."Corporations"."Jo
 
 
 --
--- TOC entry 230 (class 1259 OID 16539)
+-- TOC entry 230 (class 1259 OID 16432)
 -- Name: JobOffer_City_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -366,7 +366,7 @@ ALTER SEQUENCE public."JobOffer_City_seq" OWNED BY public."Corporations"."City";
 
 
 --
--- TOC entry 231 (class 1259 OID 16540)
+-- TOC entry 231 (class 1259 OID 16433)
 -- Name: JobOffer_CompanySpecialization_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -391,7 +391,7 @@ ALTER SEQUENCE public."JobOffer_CompanySpecialization_seq" OWNED BY public."Corp
 
 
 --
--- TOC entry 232 (class 1259 OID 16541)
+-- TOC entry 232 (class 1259 OID 16434)
 -- Name: JobOffer_Country_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -416,7 +416,7 @@ ALTER SEQUENCE public."JobOffer_Country_seq" OWNED BY public."Corporations"."Cou
 
 
 --
--- TOC entry 233 (class 1259 OID 16542)
+-- TOC entry 233 (class 1259 OID 16435)
 -- Name: JobOffer_Neighborhood_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -441,7 +441,7 @@ ALTER SEQUENCE public."JobOffer_Neighborhood_seq" OWNED BY public."Corporations"
 
 
 --
--- TOC entry 234 (class 1259 OID 16543)
+-- TOC entry 234 (class 1259 OID 16436)
 -- Name: JobOffer_User_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -466,12 +466,12 @@ ALTER SEQUENCE public."JobOffer_User_seq" OWNED BY public."Corporations"."User";
 
 
 --
--- TOC entry 235 (class 1259 OID 16544)
+-- TOC entry 235 (class 1259 OID 16437)
 -- Name: Matches_Types; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public."Matches_Types" (
-    "Id" int,
+    "Id" integer,
     "Id_UserPicker" integer,
     "Id_UserPursuer" integer
 );
@@ -480,20 +480,20 @@ CREATE TABLE public."Matches_Types" (
 ALTER TABLE public."Matches_Types" OWNER TO postgres;
 
 --
--- TOC entry 236 (class 1259 OID 16547)
+-- TOC entry 236 (class 1259 OID 16440)
 -- Name: Picker_Job; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public."Picker_Job" (
-    "Id_User" int,
+    "Id_User" integer,
     "Title" text,
     "Description" text,
     "Category" integer,
     "Sub_Category" integer,
     "Date_Created" date,
-    "AgeMax" int,
-    "AgeMin" int,
-    "Salary" int,
+    "AgeMax" integer,
+    "AgeMin" integer,
+    "Salary" integer,
     "IdCorporation" integer,
     "Id" integer NOT NULL
 );
@@ -502,7 +502,7 @@ CREATE TABLE public."Picker_Job" (
 ALTER TABLE public."Picker_Job" OWNER TO postgres;
 
 --
--- TOC entry 237 (class 1259 OID 16552)
+-- TOC entry 237 (class 1259 OID 16445)
 -- Name: Picker_Job_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -527,36 +527,36 @@ ALTER SEQUENCE public."Picker_Job_Id_seq" OWNED BY public."Picker_Job"."Id";
 
 
 --
--- TOC entry 238 (class 1259 OID 16553)
+-- TOC entry 238 (class 1259 OID 16446)
 -- Name: Pickers_Matches; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public."Pickers_Matches" (
-    "Id" int,
-    "Id_Job" int,
-    "Id_User" int,
-    "Match_Type" int
+    "Id" integer,
+    "Id_Job" integer,
+    "Id_User" integer,
+    "Match_Type" integer
 );
 
 
 ALTER TABLE public."Pickers_Matches" OWNER TO postgres;
 
 --
--- TOC entry 244 (class 1259 OID 16599)
+-- TOC entry 239 (class 1259 OID 16449)
 -- Name: UserCategories; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public."UserCategories" (
     "Id" integer NOT NULL,
     "IdUser" integer NOT NULL,
-    "IdCategory" integer
+    "IdCategory" integer NOT NULL
 );
 
 
 ALTER TABLE public."UserCategories" OWNER TO postgres;
 
 --
--- TOC entry 243 (class 1259 OID 16598)
+-- TOC entry 240 (class 1259 OID 16452)
 -- Name: UserCategories_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -573,7 +573,7 @@ ALTER SEQUENCE public."UserCategories_Id_seq" OWNER TO postgres;
 
 --
 -- TOC entry 4926 (class 0 OID 0)
--- Dependencies: 243
+-- Dependencies: 240
 -- Name: UserCategories_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -581,7 +581,7 @@ ALTER SEQUENCE public."UserCategories_Id_seq" OWNED BY public."UserCategories"."
 
 
 --
--- TOC entry 239 (class 1259 OID 16556)
+-- TOC entry 241 (class 1259 OID 16453)
 -- Name: UserStudies; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -597,7 +597,7 @@ CREATE TABLE public."UserStudies" (
 ALTER TABLE public."UserStudies" OWNER TO postgres;
 
 --
--- TOC entry 240 (class 1259 OID 16559)
+-- TOC entry 242 (class 1259 OID 16456)
 -- Name: UserEducations_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -614,7 +614,7 @@ ALTER SEQUENCE public."UserEducations_Id_seq" OWNER TO postgres;
 
 --
 -- TOC entry 4927 (class 0 OID 0)
--- Dependencies: 240
+-- Dependencies: 242
 -- Name: UserEducations_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -622,7 +622,7 @@ ALTER SEQUENCE public."UserEducations_Id_seq" OWNED BY public."UserStudies"."Id"
 
 
 --
--- TOC entry 241 (class 1259 OID 16560)
+-- TOC entry 243 (class 1259 OID 16457)
 -- Name: Users; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -644,14 +644,15 @@ CREATE TABLE public."Users" (
     "Experience2" character varying(150),
     "Experience3" character varying(150),
     "Id" integer NOT NULL,
-    "Country" integer
+    "Country" integer,
+    "Image" text
 );
 
 
 ALTER TABLE public."Users" OWNER TO postgres;
 
 --
--- TOC entry 242 (class 1259 OID 16565)
+-- TOC entry 244 (class 1259 OID 16462)
 -- Name: User_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -668,7 +669,7 @@ ALTER SEQUENCE public."User_Id_seq" OWNER TO postgres;
 
 --
 -- TOC entry 4928 (class 0 OID 0)
--- Dependencies: 242
+-- Dependencies: 244
 -- Name: User_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -676,7 +677,7 @@ ALTER SEQUENCE public."User_Id_seq" OWNED BY public."Users"."Id";
 
 
 --
--- TOC entry 4698 (class 2604 OID 16566)
+-- TOC entry 4698 (class 2604 OID 16463)
 -- Name: Categories Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -684,7 +685,7 @@ ALTER TABLE ONLY public."Categories" ALTER COLUMN "Id" SET DEFAULT nextval('publ
 
 
 --
--- TOC entry 4699 (class 2604 OID 16567)
+-- TOC entry 4699 (class 2604 OID 16464)
 -- Name: Corporations User; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -692,7 +693,7 @@ ALTER TABLE ONLY public."Corporations" ALTER COLUMN "User" SET DEFAULT nextval('
 
 
 --
--- TOC entry 4700 (class 2604 OID 16568)
+-- TOC entry 4700 (class 2604 OID 16465)
 -- Name: Corporations CompanySpecialization; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -700,7 +701,7 @@ ALTER TABLE ONLY public."Corporations" ALTER COLUMN "CompanySpecialization" SET 
 
 
 --
--- TOC entry 4701 (class 2604 OID 16569)
+-- TOC entry 4701 (class 2604 OID 16466)
 -- Name: Corporations Country; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -708,7 +709,7 @@ ALTER TABLE ONLY public."Corporations" ALTER COLUMN "Country" SET DEFAULT nextva
 
 
 --
--- TOC entry 4702 (class 2604 OID 16570)
+-- TOC entry 4702 (class 2604 OID 16467)
 -- Name: Corporations City; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -716,7 +717,7 @@ ALTER TABLE ONLY public."Corporations" ALTER COLUMN "City" SET DEFAULT nextval('
 
 
 --
--- TOC entry 4703 (class 2604 OID 16571)
+-- TOC entry 4703 (class 2604 OID 16468)
 -- Name: Corporations Neighborhood; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -724,7 +725,7 @@ ALTER TABLE ONLY public."Corporations" ALTER COLUMN "Neighborhood" SET DEFAULT n
 
 
 --
--- TOC entry 4704 (class 2604 OID 16572)
+-- TOC entry 4704 (class 2604 OID 16469)
 -- Name: Corporations JobOfferCategory; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -732,7 +733,7 @@ ALTER TABLE ONLY public."Corporations" ALTER COLUMN "JobOfferCategory" SET DEFAU
 
 
 --
--- TOC entry 4705 (class 2604 OID 16573)
+-- TOC entry 4705 (class 2604 OID 16470)
 -- Name: Corporations Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -740,7 +741,7 @@ ALTER TABLE ONLY public."Corporations" ALTER COLUMN "Id" SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 4706 (class 2604 OID 16574)
+-- TOC entry 4706 (class 2604 OID 16471)
 -- Name: Countries Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -748,7 +749,7 @@ ALTER TABLE ONLY public."Countries" ALTER COLUMN "Id" SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 4707 (class 2604 OID 16575)
+-- TOC entry 4707 (class 2604 OID 16472)
 -- Name: Document_Types Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -756,7 +757,7 @@ ALTER TABLE ONLY public."Document_Types" ALTER COLUMN "Id" SET DEFAULT nextval('
 
 
 --
--- TOC entry 4708 (class 2604 OID 16576)
+-- TOC entry 4708 (class 2604 OID 16473)
 -- Name: EducationalInstitutions Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -764,7 +765,7 @@ ALTER TABLE ONLY public."EducationalInstitutions" ALTER COLUMN "Id" SET DEFAULT 
 
 
 --
--- TOC entry 4709 (class 2604 OID 16577)
+-- TOC entry 4709 (class 2604 OID 16474)
 -- Name: EducationalStatus Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -772,7 +773,7 @@ ALTER TABLE ONLY public."EducationalStatus" ALTER COLUMN "Id" SET DEFAULT nextva
 
 
 --
--- TOC entry 4710 (class 2604 OID 16578)
+-- TOC entry 4710 (class 2604 OID 16475)
 -- Name: Genders Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -780,7 +781,7 @@ ALTER TABLE ONLY public."Genders" ALTER COLUMN "Id" SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 4711 (class 2604 OID 16579)
+-- TOC entry 4711 (class 2604 OID 16476)
 -- Name: Picker_Job Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -788,7 +789,7 @@ ALTER TABLE ONLY public."Picker_Job" ALTER COLUMN "Id" SET DEFAULT nextval('publ
 
 
 --
--- TOC entry 4714 (class 2604 OID 16602)
+-- TOC entry 4712 (class 2604 OID 16477)
 -- Name: UserCategories Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -796,7 +797,7 @@ ALTER TABLE ONLY public."UserCategories" ALTER COLUMN "Id" SET DEFAULT nextval('
 
 
 --
--- TOC entry 4712 (class 2604 OID 16580)
+-- TOC entry 4713 (class 2604 OID 16478)
 -- Name: UserStudies Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -804,7 +805,7 @@ ALTER TABLE ONLY public."UserStudies" ALTER COLUMN "Id" SET DEFAULT nextval('pub
 
 
 --
--- TOC entry 4713 (class 2604 OID 16581)
+-- TOC entry 4714 (class 2604 OID 16479)
 -- Name: Users Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -812,7 +813,7 @@ ALTER TABLE ONLY public."Users" ALTER COLUMN "Id" SET DEFAULT nextval('public."U
 
 
 --
--- TOC entry 4876 (class 0 OID 16506)
+-- TOC entry 4876 (class 0 OID 16399)
 -- Dependencies: 215
 -- Data for Name: Categories; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -870,7 +871,7 @@ INSERT INTO public."Categories" VALUES (51, 'Urologist', 41);
 
 
 --
--- TOC entry 4878 (class 0 OID 16512)
+-- TOC entry 4878 (class 0 OID 16405)
 -- Dependencies: 217
 -- Data for Name: Corporations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -878,7 +879,7 @@ INSERT INTO public."Categories" VALUES (51, 'Urologist', 41);
 
 
 --
--- TOC entry 4880 (class 0 OID 16516)
+-- TOC entry 4880 (class 0 OID 16409)
 -- Dependencies: 219
 -- Data for Name: Countries; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1135,7 +1136,7 @@ INSERT INTO public."Countries" VALUES (253, 'Zimbabwe', 'ZW');
 
 
 --
--- TOC entry 4882 (class 0 OID 16520)
+-- TOC entry 4882 (class 0 OID 16413)
 -- Dependencies: 221
 -- Data for Name: Document_Types; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1145,7 +1146,7 @@ INSERT INTO public."Document_Types" VALUES (2, 'Passport');
 
 
 --
--- TOC entry 4884 (class 0 OID 16524)
+-- TOC entry 4884 (class 0 OID 16417)
 -- Dependencies: 223
 -- Data for Name: EducationalInstitutions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1236,7 +1237,7 @@ INSERT INTO public."EducationalInstitutions" VALUES (83, 'Universidad Nacional T
 
 
 --
--- TOC entry 4886 (class 0 OID 16528)
+-- TOC entry 4886 (class 0 OID 16421)
 -- Dependencies: 225
 -- Data for Name: EducationalStatus; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1247,7 +1248,7 @@ INSERT INTO public."EducationalStatus" VALUES (3, 'In Progress');
 
 
 --
--- TOC entry 4888 (class 0 OID 16532)
+-- TOC entry 4888 (class 0 OID 16425)
 -- Dependencies: 227
 -- Data for Name: Genders; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1259,7 +1260,7 @@ INSERT INTO public."Genders" VALUES (4, 'Other');
 
 
 --
--- TOC entry 4896 (class 0 OID 16544)
+-- TOC entry 4896 (class 0 OID 16437)
 -- Dependencies: 235
 -- Data for Name: Matches_Types; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1267,30 +1268,27 @@ INSERT INTO public."Genders" VALUES (4, 'Other');
 
 
 --
--- TOC entry 4897 (class 0 OID 16547)
+-- TOC entry 4897 (class 0 OID 16440)
 -- Dependencies: 236
 -- Data for Name: Picker_Job; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
---INSERTS PARA LOS QUE BUSCAN TRABAJO PICKER_JOB --
-
 INSERT INTO public."Picker_Job" VALUES (2, 'Seeking for a engineer', 'full time, paid', 9, 14, '2024-06-14', NULL, NULL, NULL, NULL, 1);
 INSERT INTO public."Picker_Job" VALUES (2, 'Seeking for a engineer', 'full time, paid', 9, 14, '2024-06-14', NULL, NULL, NULL, NULL, 2);
-INSERT INTO public."Picker_Job" VALUES (11, 'Software Engineer Position', 'Looking for a skilled software engineer to develop web applications.',9 , 10, '2024-06-14', 25, 20, 60000, 11);
-INSERT INTO public."Picker_Job" VALUES (12, 'Mechanical Engineer Role', 'Need a mechanical engineer to design and oversee manufacturing processes.', 9, 11, '2024-06-14', 30, 22, 55000, 12);
-INSERT INTO public."Picker_Job" VALUES (3, 'Civil Engineer Job', 'Seeking a civil engineer for infrastructure projects.', 9 , 12, '2024-06-14', 35, 25, 70000, 3);
-INSERT INTO public."Picker_Job" VALUES (4, 'Digital Marketing Specialist', 'We need a digital marketing specialist to manage online campaigns.', 28, 32, '2024-06-14', 40, 22, 50000, 4);
-INSERT INTO public."Picker_Job" VALUES (5, 'Human Resources Manager', 'Looking for an HR manager to handle recruitment and employee relations.', 25, NULL, '2024-06-14', 45, 30, 75000, 5);
-INSERT INTO public."Picker_Job" VALUES (6, 'Biomedical Engineer Opportunity', 'Hiring a biomedical engineer to work on medical device development.', 9, 16, '2024-06-14', 40, 28, 68000, 6);
-INSERT INTO public."Picker_Job" VALUES (7, 'Psychiatrist Position', 'We are looking for a psychiatrist to join our mental health team.', 41, 49, '2024-06-14', 50, 30, 85000, 7);
-INSERT INTO public."Picker_Job" VALUES (8, 'Operations Manager', 'Seeking an operations manager to oversee production processes.', 26, NULL, '2024-06-14', 45, 32, 72000, 8);
-INSERT INTO public."Picker_Job" VALUES (9, 'Electrical Engineer Needed', 'Looking for an electrical engineer to work on power systems.', 9, 12, '2024-06-14', 38, 26, 64000, 9);
-INSERT INTO public."Picker_Job" VALUES (10, 'Environmental Engineer Job', 'Hiring an environmental engineer to work on sustainability projects.', 9, 17, '2024-06-14', 35, 27, 67000, 10);
-
+INSERT INTO public."Picker_Job" VALUES (11, 'Software Engineer Position', 'Looking for a skilled software engineer to develop web applications.', 9, 10, '2024-06-14', 25, 20, 60000, 11, 1);
+INSERT INTO public."Picker_Job" VALUES (12, 'Mechanical Engineer Role', 'Need a mechanical engineer to design and oversee manufacturing processes.', 9, 11, '2024-06-14', 30, 22, 55000, 12, 2);
+INSERT INTO public."Picker_Job" VALUES (3, 'Civil Engineer Job', 'Seeking a civil engineer for infrastructure projects.', 9, 12, '2024-06-14', 35, 25, 70000, 3, 3);
+INSERT INTO public."Picker_Job" VALUES (4, 'Digital Marketing Specialist', 'We need a digital marketing specialist to manage online campaigns.', 28, 32, '2024-06-14', 40, 22, 50000, 4, 4);
+INSERT INTO public."Picker_Job" VALUES (5, 'Human Resources Manager', 'Looking for an HR manager to handle recruitment and employee relations.', 25, NULL, '2024-06-14', 45, 30, 75000, 5, 5);
+INSERT INTO public."Picker_Job" VALUES (6, 'Biomedical Engineer Opportunity', 'Hiring a biomedical engineer to work on medical device development.', 9, 16, '2024-06-14', 40, 28, 68000, 6, 6);
+INSERT INTO public."Picker_Job" VALUES (7, 'Psychiatrist Position', 'We are looking for a psychiatrist to join our mental health team.', 41, 49, '2024-06-14', 50, 30, 85000, 7, 7);
+INSERT INTO public."Picker_Job" VALUES (8, 'Operations Manager', 'Seeking an operations manager to oversee production processes.', 26, NULL, '2024-06-14', 45, 32, 72000, 8, 8);
+INSERT INTO public."Picker_Job" VALUES (9, 'Electrical Engineer Needed', 'Looking for an electrical engineer to work on power systems.', 9, 12, '2024-06-14', 38, 26, 64000, 9, 9);
+INSERT INTO public."Picker_Job" VALUES (10, 'Environmental Engineer Job', 'Hiring an environmental engineer to work on sustainability projects.', 9, 17, '2024-06-14', 35, 27, 67000, 10, 10);
 
 
 --
--- TOC entry 4899 (class 0 OID 16553)
+-- TOC entry 4899 (class 0 OID 16446)
 -- Dependencies: 238
 -- Data for Name: Pickers_Matches; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -1298,76 +1296,91 @@ INSERT INTO public."Picker_Job" VALUES (10, 'Environmental Engineer Job', 'Hirin
 
 
 --
--- TOC entry 4905 (class 0 OID 16599)
--- Dependencies: 244
+-- TOC entry 4900 (class 0 OID 16449)
+-- Dependencies: 239
 -- Data for Name: UserCategories; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+INSERT INTO public."UserCategories" VALUES (15, 1, 1);
+INSERT INTO public."UserCategories" VALUES (17, 1, 3);
+INSERT INTO public."UserCategories" VALUES (18, 1, 4);
+INSERT INTO public."UserCategories" VALUES (19, 2, 2);
+INSERT INTO public."UserCategories" VALUES (20, 3, 9);
+INSERT INTO public."UserCategories" VALUES (21, 3, 13);
+INSERT INTO public."UserCategories" VALUES (22, 4, 28);
+INSERT INTO public."UserCategories" VALUES (23, 4, 29);
+INSERT INTO public."UserCategories" VALUES (24, 5, 24);
+INSERT INTO public."UserCategories" VALUES (25, 6, 25);
+INSERT INTO public."UserCategories" VALUES (26, 7, 9);
+INSERT INTO public."UserCategories" VALUES (27, 7, 16);
+INSERT INTO public."UserCategories" VALUES (28, 8, 41);
+INSERT INTO public."UserCategories" VALUES (29, 8, 49);
+INSERT INTO public."UserCategories" VALUES (30, 9, 26);
+INSERT INTO public."UserCategories" VALUES (31, 10, 9);
+INSERT INTO public."UserCategories" VALUES (32, 10, 12);
+INSERT INTO public."UserCategories" VALUES (33, 11, 9);
+INSERT INTO public."UserCategories" VALUES (34, 11, 17);
+INSERT INTO public."UserCategories" VALUES (35, 12, 9);
+INSERT INTO public."UserCategories" VALUES (36, 12, 10);
+INSERT INTO public."UserCategories" VALUES (37, 13, 9);
+INSERT INTO public."UserCategories" VALUES (38, 13, 13);
+INSERT INTO public."UserCategories" VALUES (39, 14, 9);
+INSERT INTO public."UserCategories" VALUES (40, 14, 11);
+INSERT INTO public."UserCategories" VALUES (41, 15, 9);
+INSERT INTO public."UserCategories" VALUES (42, 15, 10);
+INSERT INTO public."UserCategories" VALUES (43, 16, 29);
+INSERT INTO public."UserCategories" VALUES (44, 17, 25);
+INSERT INTO public."UserCategories" VALUES (45, 18, 9);
+INSERT INTO public."UserCategories" VALUES (46, 18, 16);
+INSERT INTO public."UserCategories" VALUES (47, 19, 41);
+INSERT INTO public."UserCategories" VALUES (48, 19, 49);
+INSERT INTO public."UserCategories" VALUES (49, 20, 26);
+INSERT INTO public."UserCategories" VALUES (50, 21, 9);
+INSERT INTO public."UserCategories" VALUES (51, 21, 12);
+INSERT INTO public."UserCategories" VALUES (52, 22, 9);
+INSERT INTO public."UserCategories" VALUES (53, 22, 17);
 
 
 --
--- TOC entry 4900 (class 0 OID 16556)
--- Dependencies: 239
+-- TOC entry 4902 (class 0 OID 16453)
+-- Dependencies: 241
 -- Data for Name: UserStudies; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public."UserStudies" VALUES (1, 1, 5, 2, 'Chemical Engineer');
 
-INSERT INTO public."UserCategories" VALUES (1, 11, 9);
 
 --
--- TOC entry 4902 (class 0 OID 16560)
--- Dependencies: 241
+-- TOC entry 4904 (class 0 OID 16457)
+-- Dependencies: 243
 -- Data for Name: Users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."Users" VALUES ('Benicio', '2024-06-14', 1, 'Bursztyn', '2006-12-28', 1, 47699155, 'benyburs@gmail.com', 'benipolshu3', '123123', 'finances', 'Playing soccer and dancing', 'A nice job enviroment', 'Worked as a consultant in MB', 'Developed an app called Laburar', NULL, 1, 15);
-INSERT INTO public."Users" VALUES ('Federico', '2024-06-14', 2, 'Bider', '2007-05-30', 1, 123123111, 'fedebider@gmail.com', 'edericopolshu3', '123123', NULL, NULL, NULL, NULL, NULL, NULL, 2, 15);
--- Inserciones en la tabla Users
-INSERT INTO public."Users" VALUES ('Alice', '2024-06-14', 2, 'Smith', '1990-01-01', 2, 12345678, 'alice.smith@example.com', 'aliceuser', 'alicepass', 'engineering', 'Reading and traveling', 'Innovative work environment', 'Currently working as a software developer at TechCorp', 'Developed a project management tool', NULL, 11, 240);
-INSERT INTO public."Users" VALUES ('Bob', '2024-06-14', 3, 'Johnson', '1985-02-02', 3, 23456789, 'bob.johnson@example.com', 'bobuser', 'bobpass', 'marketing', 'Hiking and photography', 'Collaborative team', 'Currently working as a marketing specialist at MarketCo', 'Led a successful ad campaign', NULL, 12, 240);
-INSERT INTO public."Users" VALUES ('Carol', '2024-06-14', 4, 'Williams', '1988-03-03', 4, 34567890, 'carol.williams@example.com', 'caroluser', 'carolpass', 'finance', 'Cooking and painting', 'Supportive work culture', 'Currently working as a financial analyst at FinCorp', 'Implemented cost-saving measures', NULL, 3, 240 );
-INSERT INTO public."Users" VALUES ('David', '2024-06-14', 5, 'Brown', '1992-04-04', 5, 45678901, 'david.brown@example.com', 'daviduser', 'davidpass', 'human resources', 'Cycling and music', 'Diverse workplace', 'Currently working as an HR manager at HR Solutions', 'Improved employee retention rates', NULL, 4, 240);
-INSERT INTO public."Users" VALUES ('Eve', '2024-06-14', 6, 'Jones', '1995-05-05', 6, 56789012, 'eve.jones@example.com', 'eveuser', 'evepass', 'biomedical engineering', 'Swimming and gardening', 'Flexible working hours', 'Currently working as a biomedical engineer at BioTech', 'Developed a new medical device', NULL, 5, 240);
-INSERT INTO public."Users" VALUES ('Frank', '2024-06-14', 7, 'Miller', '1983-06-06', 7, 67890123, 'frank.miller@example.com', 'frankuser', 'frankpass', 'medicine', 'Running and gaming', 'Cutting-edge technology', 'Currently working as a psychiatrist at HealthCare', 'Provided mental health support', NULL, 6, 240);
-INSERT INTO public."Users" VALUES ('Grace', '2024-06-14', 8, 'Davis', '1986-07-07', 8, 78901234, 'grace.davis@example.com', 'graceuser', 'gracepass', 'operations management', 'Yoga and writing', 'Growth opportunities', 'Currently working as an operations manager at OpsPro', 'Streamlined operational processes', NULL, 7, 240);
-INSERT INTO public."Users" VALUES ('Hank', '2024-06-14', 9, 'Garcia', '1991-08-08', 9, 89012345, 'hank.garcia@example.com', 'hankuser', 'hankpass', 'electrical engineering', 'Climbing and reading', 'Challenging projects', 'Currently working as an electrical engineer at PowerTech', 'Designed efficient power systems', NULL, 8, 240);
-INSERT INTO public."Users" VALUES ('Ivy', '2024-06-14', 10, 'Martinez', '1987-09-09', 10, 90123456, 'ivy.martinez@example.com', 'ivyuser', 'ivypass', 'environmental engineering', 'Running and cooking', 'Sustainable practices', 'Currently working as an environmental engineer at GreenWorld', 'Led a sustainability project', NULL, 9, 240);
-INSERT INTO public."Users" VALUES ('Jack', '2024-06-14', 11, 'Lee', '1984-10-10', 11, 101234567, 'jack.lee@example.com', 'jackuser', 'jackpass', 'civil engineering', 'Traveling and coding', 'Innovative solutions', 'Currently working as a civil engineer at BuildCo', 'Managed large-scale construction projects', NULL, 10, 240);
--- Nuevos usuarios que podrían suplir las necesidades de los trabajos publicados
-
--- Software Engineer Position
-INSERT INTO public."Users" VALUES ('Michael', '2024-06-14', 1, 'Anderson', '1992-01-15', 12, 11112222, 'michael.anderson@example.com', 'michaeluser', 'michaelpass', 'software engineering', 'Coding and hiking', 'Innovative team', 'Experienced in full-stack development', 'Worked on several web applications', NULL, 13, 240);
-
--- Mechanical Engineer Role
-INSERT INTO public."Users" VALUES ('Sarah', '2024-06-14', 2, 'Johnson', '1988-02-20', 13, 22223333, 'sarah.johnson@example.com', 'sarahuser', 'sarahpass', 'mechanical engineering', 'Reading and biking', 'Dynamic projects', 'Experienced in CAD and manufacturing', 'Led projects in automotive industry', NULL, 14, 240);
-
--- Civil Engineer Job
-INSERT INTO public."Users" VALUES ('David', '2024-06-14', 1, 'Miller', '1985-03-25', 14, 33334444, 'david.miller@example.com', 'daviduser', 'davidpass', 'civil engineering', 'Traveling and photography', 'Challenging infrastructure projects', 'Worked on major city infrastructure', 'Managed large construction teams', NULL, 15, 240);
-
--- Digital Marketing Specialist
-INSERT INTO public."Users" VALUES ('Emma', '2024-06-14', 2, 'Davis', '1990-04-30', 15, 44445555, 'emma.davis@example.com', 'emmauser', 'emmapass', 'digital marketing', 'Painting and blogging', 'Creative marketing campaigns', 'Specialized in SEO and social media', 'Increased online presence for brands', NULL, 16, 240);
-
--- Human Resources Manager
-INSERT INTO public."Users" VALUES ('John', '2024-06-14', 1, 'Smith', '1987-05-10', 16, 55556666, 'john.smith@example.com', 'johnuser', 'johnpass', 'human resources', 'Running and cooking', 'Building effective teams', 'Improved employee engagement', 'Managed recruitment processes', NULL, 17, 240);
-
--- Biomedical Engineer Opportunity
-INSERT INTO public."Users" VALUES ('Jessica', '2024-06-14', 2, 'Brown', '1993-06-15', 17, 66667777, 'jessica.brown@example.com', 'jessicauser', 'jessicapass', 'biomedical engineering', 'Gardening and dancing', 'Innovative medical devices', 'Worked on advanced prosthetics', 'Published research in medical journals', NULL, 18, 240);
-
--- Psychiatrist Position
-INSERT INTO public."Users" VALUES ('Robert', '2024-06-14', 1, 'Taylor', '1980-07-20', 18, 77778888, 'robert.taylor@example.com', 'robertuser', 'robertpass', 'psychiatry', 'Reading and swimming', 'Providing mental health support', 'Experienced in clinical settings', 'Worked with diverse patient groups', NULL, 19, 240);
-
--- Operations Manager
-INSERT INTO public."Users" VALUES ('Linda', '2024-06-14', 2, 'White', '1982-08-25', 19, 88889999, 'linda.white@example.com', 'lindauser', 'lindapass', 'operations management', 'Yoga and writing', 'Optimizing operations', 'Implemented lean manufacturing processes', 'Improved operational efficiency', NULL, 20, 240);
-
--- Electrical Engineer Needed
-INSERT INTO public."Users" VALUES ('James', '2024-06-14', 1, 'Harris', '1984-09-30', 20, 99990000, 'james.harris@example.com', 'jamesuser', 'jamespass', 'electrical engineering', 'Cycling and coding', 'Designing power systems', 'Worked on renewable energy projects', 'Developed efficient power solutions', NULL, 21, 240);
-
--- Environmental Engineer Job
-INSERT INTO public."Users" VALUES ('Anna', '2024-06-14', 2, 'Clark', '1986-10-05', 21, 10101010, 'anna.clark@example.com', 'annauser', 'annapass', 'environmental engineering', 'Running and painting', 'Sustainable engineering solutions', 'Led environmental impact studies', 'Implemented green technologies', NULL, 22, 240);
+INSERT INTO public."Users" VALUES ('Benicio', '2024-06-14', 1, 'Bursztyn', '2006-12-28', 1, 47699155, 'benyburs@gmail.com', 'benipolshu3', '123123', 'finances', 'Playing soccer and dancing', 'A nice job enviroment', 'Worked as a consultant in MB', 'Developed an app called Laburar', NULL, 1, 15, NULL);
+INSERT INTO public."Users" VALUES ('Federico', '2024-06-14', 2, 'Bider', '2007-05-30', 1, 123123111, 'fedebider@gmail.com', 'edericopolshu3', '123123', NULL, NULL, NULL, NULL, NULL, NULL, 2, 15, NULL);
+INSERT INTO public."Users" VALUES ('Alice', '2024-06-14', 2, 'Smith', '1990-01-01', 2, 12345678, 'alice.smith@example.com', 'aliceuser', 'alicepass', 'engineering', 'Reading and traveling', 'Innovative work environment', 'Currently working as a software developer at TechCorp', 'Developed a project management tool', NULL, 11, 240, NULL);
+INSERT INTO public."Users" VALUES ('Bob', '2024-06-14', 3, 'Johnson', '1985-02-02', 3, 23456789, 'bob.johnson@example.com', 'bobuser', 'bobpass', 'marketing', 'Hiking and photography', 'Collaborative team', 'Currently working as a marketing specialist at MarketCo', 'Led a successful ad campaign', NULL, 12, 240, NULL);
+INSERT INTO public."Users" VALUES ('Carol', '2024-06-14', 4, 'Williams', '1988-03-03', 4, 34567890, 'carol.williams@example.com', 'caroluser', 'carolpass', 'finance', 'Cooking and painting', 'Supportive work culture', 'Currently working as a financial analyst at FinCorp', 'Implemented cost-saving measures', NULL, 3, 240, NULL);
+INSERT INTO public."Users" VALUES ('David', '2024-06-14', 5, 'Brown', '1992-04-04', 5, 45678901, 'david.brown@example.com', 'daviduser', 'davidpass', 'human resources', 'Cycling and music', 'Diverse workplace', 'Currently working as an HR manager at HR Solutions', 'Improved employee retention rates', NULL, 4, 240, NULL);
+INSERT INTO public."Users" VALUES ('Eve', '2024-06-14', 6, 'Jones', '1995-05-05', 6, 56789012, 'eve.jones@example.com', 'eveuser', 'evepass', 'biomedical engineering', 'Swimming and gardening', 'Flexible working hours', 'Currently working as a biomedical engineer at BioTech', 'Developed a new medical device', NULL, 5, 240, NULL);
+INSERT INTO public."Users" VALUES ('Frank', '2024-06-14', 7, 'Miller', '1983-06-06', 7, 67890123, 'frank.miller@example.com', 'frankuser', 'frankpass', 'medicine', 'Running and gaming', 'Cutting-edge technology', 'Currently working as a psychiatrist at HealthCare', 'Provided mental health support', NULL, 6, 240, NULL);
+INSERT INTO public."Users" VALUES ('Grace', '2024-06-14', 8, 'Davis', '1986-07-07', 8, 78901234, 'grace.davis@example.com', 'graceuser', 'gracepass', 'operations management', 'Yoga and writing', 'Growth opportunities', 'Currently working as an operations manager at OpsPro', 'Streamlined operational processes', NULL, 7, 240, NULL);
+INSERT INTO public."Users" VALUES ('Hank', '2024-06-14', 9, 'Garcia', '1991-08-08', 9, 89012345, 'hank.garcia@example.com', 'hankuser', 'hankpass', 'electrical engineering', 'Climbing and reading', 'Challenging projects', 'Currently working as an electrical engineer at PowerTech', 'Designed efficient power systems', NULL, 8, 240, NULL);
+INSERT INTO public."Users" VALUES ('Ivy', '2024-06-14', 10, 'Martinez', '1987-09-09', 10, 90123456, 'ivy.martinez@example.com', 'ivyuser', 'ivypass', 'environmental engineering', 'Running and cooking', 'Sustainable practices', 'Currently working as an environmental engineer at GreenWorld', 'Led a sustainability project', NULL, 9, 240, NULL);
+INSERT INTO public."Users" VALUES ('Jack', '2024-06-14', 11, 'Lee', '1984-10-10', 11, 101234567, 'jack.lee@example.com', 'jackuser', 'jackpass', 'civil engineering', 'Traveling and coding', 'Innovative solutions', 'Currently working as a civil engineer at BuildCo', 'Managed large-scale construction projects', NULL, 10, 240, NULL);
+INSERT INTO public."Users" VALUES ('Michael', '2024-06-14', 1, 'Anderson', '1992-01-15', 12, 11112222, 'michael.anderson@example.com', 'michaeluser', 'michaelpass', 'software engineering', 'Coding and hiking', 'Innovative team', 'Experienced in full-stack development', 'Worked on several web applications', NULL, 13, 240, NULL);
+INSERT INTO public."Users" VALUES ('Sarah', '2024-06-14', 2, 'Johnson', '1988-02-20', 13, 22223333, 'sarah.johnson@example.com', 'sarahuser', 'sarahpass', 'mechanical engineering', 'Reading and biking', 'Dynamic projects', 'Experienced in CAD and manufacturing', 'Led projects in automotive industry', NULL, 14, 240, NULL);
+INSERT INTO public."Users" VALUES ('David', '2024-06-14', 1, 'Miller', '1985-03-25', 14, 33334444, 'david.miller@example.com', 'daviduser', 'davidpass', 'civil engineering', 'Traveling and photography', 'Challenging infrastructure projects', 'Worked on major city infrastructure', 'Managed large construction teams', NULL, 15, 240, NULL);
+INSERT INTO public."Users" VALUES ('Emma', '2024-06-14', 2, 'Davis', '1990-04-30', 15, 44445555, 'emma.davis@example.com', 'emmauser', 'emmapass', 'digital marketing', 'Painting and blogging', 'Creative marketing campaigns', 'Specialized in SEO and social media', 'Increased online presence for brands', NULL, 16, 240, NULL);
+INSERT INTO public."Users" VALUES ('John', '2024-06-14', 1, 'Smith', '1987-05-10', 16, 55556666, 'john.smith@example.com', 'johnuser', 'johnpass', 'human resources', 'Running and cooking', 'Building effective teams', 'Improved employee engagement', 'Managed recruitment processes', NULL, 17, 240, NULL);
+INSERT INTO public."Users" VALUES ('Jessica', '2024-06-14', 2, 'Brown', '1993-06-15', 17, 66667777, 'jessica.brown@example.com', 'jessicauser', 'jessicapass', 'biomedical engineering', 'Gardening and dancing', 'Innovative medical devices', 'Worked on advanced prosthetics', 'Published research in medical journals', NULL, 18, 240, NULL);
+INSERT INTO public."Users" VALUES ('Robert', '2024-06-14', 1, 'Taylor', '1980-07-20', 18, 77778888, 'robert.taylor@example.com', 'robertuser', 'robertpass', 'psychiatry', 'Reading and swimming', 'Providing mental health support', 'Experienced in clinical settings', 'Worked with diverse patient groups', NULL, 19, 240, NULL);
+INSERT INTO public."Users" VALUES ('Linda', '2024-06-14', 2, 'White', '1982-08-25', 19, 88889999, 'linda.white@example.com', 'lindauser', 'lindapass', 'operations management', 'Yoga and writing', 'Optimizing operations', 'Implemented lean manufacturing processes', 'Improved operational efficiency', NULL, 20, 240, NULL);
+INSERT INTO public."Users" VALUES ('James', '2024-06-14', 1, 'Harris', '1984-09-30', 20, 99990000, 'james.harris@example.com', 'jamesuser', 'jamespass', 'electrical engineering', 'Cycling and coding', 'Designing power systems', 'Worked on renewable energy projects', 'Developed efficient power solutions', NULL, 21, 240, NULL);
+INSERT INTO public."Users" VALUES ('Anna', '2024-06-14', 2, 'Clark', '1986-10-05', 21, 10101010, 'anna.clark@example.com', 'annauser', 'annapass', 'environmental engineering', 'Running and painting', 'Sustainable engineering solutions', 'Led environmental impact studies', 'Implemented green technologies', NULL, 22, 240, NULL);
 
 
-
+--
 -- TOC entry 4929 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: Categories_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
@@ -1495,16 +1508,16 @@ SELECT pg_catalog.setval('public."Picker_Job_Id_seq"', 2, true);
 
 --
 -- TOC entry 4943 (class 0 OID 0)
--- Dependencies: 243
+-- Dependencies: 240
 -- Name: UserCategories_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."UserCategories_Id_seq"', 1, false);
+SELECT pg_catalog.setval('public."UserCategories_Id_seq"', 53, true);
 
 
 --
 -- TOC entry 4944 (class 0 OID 0)
--- Dependencies: 240
+-- Dependencies: 242
 -- Name: UserEducations_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1513,7 +1526,7 @@ SELECT pg_catalog.setval('public."UserEducations_Id_seq"', 1, false);
 
 --
 -- TOC entry 4945 (class 0 OID 0)
--- Dependencies: 242
+-- Dependencies: 244
 -- Name: User_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -1521,7 +1534,7 @@ SELECT pg_catalog.setval('public."User_Id_seq"', 2, true);
 
 
 --
--- TOC entry 4716 (class 2606 OID 16583)
+-- TOC entry 4716 (class 2606 OID 16481)
 -- Name: Categories Categories_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1530,7 +1543,7 @@ ALTER TABLE ONLY public."Categories"
 
 
 --
--- TOC entry 4718 (class 2606 OID 16585)
+-- TOC entry 4718 (class 2606 OID 16483)
 -- Name: Countries Countries_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1539,7 +1552,7 @@ ALTER TABLE ONLY public."Countries"
 
 
 --
--- TOC entry 4720 (class 2606 OID 16587)
+-- TOC entry 4720 (class 2606 OID 16485)
 -- Name: Document_Types Document_Types_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1548,7 +1561,7 @@ ALTER TABLE ONLY public."Document_Types"
 
 
 --
--- TOC entry 4722 (class 2606 OID 16589)
+-- TOC entry 4722 (class 2606 OID 16487)
 -- Name: EducationalInstitutions EducationalInstitutions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1557,7 +1570,7 @@ ALTER TABLE ONLY public."EducationalInstitutions"
 
 
 --
--- TOC entry 4724 (class 2606 OID 16591)
+-- TOC entry 4724 (class 2606 OID 16489)
 -- Name: EducationalStatus EducationalStatus_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1566,7 +1579,7 @@ ALTER TABLE ONLY public."EducationalStatus"
 
 
 --
--- TOC entry 4726 (class 2606 OID 16593)
+-- TOC entry 4726 (class 2606 OID 16491)
 -- Name: Genders Genders_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1575,16 +1588,7 @@ ALTER TABLE ONLY public."Genders"
 
 
 --
--- TOC entry 4732 (class 2606 OID 16604)
--- Name: UserCategories UserCategories_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."UserCategories"
-    ADD CONSTRAINT "UserCategories_pkey" PRIMARY KEY ("IdUser");
-
-
---
--- TOC entry 4728 (class 2606 OID 16595)
+-- TOC entry 4730 (class 2606 OID 16495)
 -- Name: UserStudies UserEducations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1593,7 +1597,7 @@ ALTER TABLE ONLY public."UserStudies"
 
 
 --
--- TOC entry 4730 (class 2606 OID 16597)
+-- TOC entry 4732 (class 2606 OID 16497)
 -- Name: Users User_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1601,8 +1605,18 @@ ALTER TABLE ONLY public."Users"
     ADD CONSTRAINT "User_pkey" PRIMARY KEY ("Id");
 
 
--- Completed on 2024-07-05 11:22:19
+--
+-- TOC entry 4728 (class 2606 OID 16500)
+-- Name: UserCategories user_category_primary_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."UserCategories"
+    ADD CONSTRAINT user_category_primary_key PRIMARY KEY ("IdUser", "IdCategory");
+
+
+-- Completed on 2024-11-22 10:04:25
 
 --
 -- PostgreSQL database dump complete
 --
+
