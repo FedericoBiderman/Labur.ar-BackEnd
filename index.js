@@ -15,8 +15,8 @@ const port = 8080;
 
 // Inclusión de los Middlewares
 app.use(cors());
+app.use('/assets', express.static('assets'));
 app.use(express.json());
-// app.use('/front', express.static('public'));
 
 // Rutas de API
 app.use('/api/filter', FilterRouter);
